@@ -1,0 +1,404 @@
+//Set texts in local language
+const objects = document.getElementsByTagName('*')
+for(let i = 0; i < objects.length; i++) {
+  if (objects[i].hasAttribute('data-text')) {
+    const textKey = objects[i].getAttribute('data-text')
+    objects[i].innerText = browser.i18n.getMessage(textKey)
+  }
+}  
+
+//Copy on select
+const copyOnSelectSetter = document.getElementById('copy_on_select_setter')
+const copyOnSelectSwitch = document.getElementById('copy_on_select_switch')
+const copyOnSelectonOffIndicator = document.getElementById('copy_on_select_on_off_label')
+
+browser.storage.local.get('copyOnSelect', (result) => {  
+  if (result.copyOnSelect) {
+    copyOnSelectSetter.classList.remove('inactive')
+    copyOnSelectSwitch.checked = true
+    copyOnSelectonOffIndicator.innerHTML = 'on'
+  }
+})
+
+copyOnSelectSwitch.addEventListener('change', (e) => {
+  if (e.target.checked) {
+    browser.storage.local.set({'copyOnSelect': true})    
+    copyOnSelectSetter.classList.remove('inactive')
+    copyOnSelectonOffIndicator.innerHTML = 'on'
+  } else {
+    browser.storage.local.set({'copyOnSelect': false})    
+    copyOnSelectSetter.classList.add('inactive')
+    copyOnSelectonOffIndicator.innerHTML = 'off'
+  }
+})
+
+//Bypass copy if Ctrl is pressed
+const bypassCopyWithCtrl = document.getElementById('bypass_with_ctrl')
+
+browser.storage.local.get('bypassCopyWithCtrl', (result) => {  
+  if (result.bypassCopyWithCtrl) {
+    bypassCopyWithCtrl.checked = true
+  }
+})
+
+bypassCopyWithCtrl.addEventListener('click', (e) => {
+  if (e.target.checked) {
+    browser.storage.local.set({'bypassCopyWithCtrl': true})    
+  } else {
+    browser.storage.local.set({'bypassCopyWithCtrl': false})    
+  }
+})
+
+//Bypass copy if Alt is pressed
+const bypassCopyWithAlt = document.getElementById('bypass_with_alt')
+const copyOnlyWithAltSetter = document.getElementById('copy_only_with_alt_setter')
+const copyOnlyWithAltSwitch = document.getElementById('copy_only_with_alt_switch')
+const copyOnlyWithAltOnOffIndicator = document.getElementById('copy_only_with_alt_label')
+
+browser.storage.local.get('bypassCopyWithAlt', (result) => {  
+  if (result.bypassCopyWithAlt) {
+    bypassCopyWithAlt.checked = true
+  }
+})
+
+bypassCopyWithAlt.addEventListener('click', (e) => {
+  if (e.target.checked) {
+    browser.storage.local.set({'bypassCopyWithAlt': true, 'copyOnlyWithAlt': false})
+    copyOnlyWithAltSetter.classList.add('inactive')
+    copyOnlyWithAltOnOffIndicator.innerHTML = 'off'
+    copyOnlyWithAltSwitch.checked = false  
+  } else {
+    browser.storage.local.set({'bypassCopyWithAlt': false})    
+  }
+})
+
+//Copy only if Alt is pressed
+
+browser.storage.local.get('copyOnlyWithAlt', (result) => {  
+  if (result.copyOnlyWithAlt) {
+    copyOnlyWithAltSetter.classList.remove('inactive')
+    copyOnlyWithAltSwitch.checked = true
+    copyOnlyWithAltOnOffIndicator.innerHTML = 'on'
+  }
+})
+
+copyOnlyWithAltSwitch.addEventListener('change', (e) => {
+  if (e.target.checked) {
+    browser.storage.local.set({'copyOnlyWithAlt': true, 'bypassCopyWithAlt': false})    
+    copyOnlyWithAltSetter.classList.remove('inactive')
+    copyOnlyWithAltOnOffIndicator.innerHTML = 'on'
+    bypassCopyWithAlt.checked = false
+  } else {
+    browser.storage.local.set({'copyOnlyWithAlt': false})    
+    copyOnlyWithAltSetter.classList.add('inactive')
+    copyOnlyWithAltOnOffIndicator.innerHTML = 'off'
+  }
+})
+
+//Include URL of page in selection
+const includeUrlSetter = document.getElementById('include_url_setter')
+const includeUrlSwitch = document.getElementById('include_url_switch')
+const includeUrlonOffIndicator = document.getElementById('include_url_on_off_label')
+
+browser.storage.local.get('includeUrl', (result) => {  
+  if (result.includeUrl) {
+    includeUrlSetter.classList.remove('inactive')
+    includeUrlSwitch.checked = true
+    includeUrlonOffIndicator.innerHTML = 'on'
+  }
+})
+
+includeUrlSwitch.addEventListener('change', (e) => {
+  if (e.target.checked) {
+    browser.storage.local.set({'includeUrl': true})    
+    includeUrlSetter.classList.remove('inactive')
+    includeUrlonOffIndicator.innerHTML = 'on'
+  } else {
+    browser.storage.local.set({'includeUrl': false})    
+    includeUrlSetter.classList.add('inactive')
+    includeUrlonOffIndicator.innerHTML = 'off'
+  }
+})
+
+document.querySelectorAll("input[name='url_type']").forEach((radioButton) => {
+  browser.storage.local.get('urlType', (result) => {  
+    if (result.urlType && radioButton.value == result.urlType) radioButton.checked = true 
+  })
+  radioButton.addEventListener('change', (e) => {
+    browser.storage.local.set({'urlType': e.target.value}) 
+  })
+})
+
+//Show 'copied!' popup alert
+const showCopiedAlertSetter = document.getElementById('show_copied_alert_setter')
+const showCopiedAlertSwitch = document.getElementById('show_copied_alert_switch')
+const showCopiedAlertonOffIndicator = document.getElementById('show_copied_alert_on_off_label')
+
+browser.storage.local.get('showCopiedAlert', (result) => {  
+  if (result.showCopiedAlert) {
+    showCopiedAlertSetter.classList.remove('inactive')
+    showCopiedAlertSwitch.checked = true
+    showCopiedAlertonOffIndicator.innerHTML = 'on'
+  }
+})
+
+showCopiedAlertSwitch.addEventListener('change', (e) => {
+  if (e.target.checked) {
+    browser.storage.local.set({'showCopiedAlert': true})    
+    showCopiedAlertSetter.classList.remove('inactive')
+    showCopiedAlertonOffIndicator.innerHTML = 'on'
+  } else {
+    browser.storage.local.set({'showCopiedAlert': false})    
+    showCopiedAlertSetter.classList.add('inactive')
+    showCopiedAlertonOffIndicator.innerHTML = 'off'
+  }
+})
+
+//Paste on middle click
+const pasteOnMiddleClickSetter = document.getElementById('paste_on_middle_click_setter')
+const pasteOnMiddleClickSwitch = document.getElementById('paste_on_middle_click_switch')
+const pasteOnMiddleClickonOffIndicator = document.getElementById('paste_on_middle_click_on_off_label')
+
+browser.storage.local.get('pasteOnMiddleClick', (result) => {  
+  if (result.pasteOnMiddleClick) {
+    pasteOnMiddleClickSetter.classList.remove('inactive')
+    pasteOnMiddleClickSwitch.checked = true
+    pasteOnMiddleClickonOffIndicator.innerHTML = 'on'
+  }
+})
+
+pasteOnMiddleClickSwitch.addEventListener('change', (e) => {
+  if (e.target.checked) {
+    browser.storage.local.set({'pasteOnMiddleClick': true})    
+    pasteOnMiddleClickSetter.classList.remove('inactive')
+    pasteOnMiddleClickonOffIndicator.innerHTML = 'on'
+  } else {
+    browser.storage.local.set({'pasteOnMiddleClick': false})    
+    pasteOnMiddleClickSetter.classList.add('inactive')
+    pasteOnMiddleClickonOffIndicator.innerHTML = 'off'
+  }
+})
+
+//Paste on double click + ctrl
+const pasteOnDoubleClickSetter = document.getElementById('paste_on_double_click_ctrl_setter')
+const pasteOnDoubleClickSwitch = document.getElementById('paste_on_double_click_ctrl_switch')
+const pasteOnDoubleClickonOffIndicator = document.getElementById('paste_on_double_click_ctrl_on_off_label')
+
+browser.storage.local.get('pasteOnDoubleClick', (result) => {  
+  if (result.pasteOnDoubleClick) {
+    pasteOnDoubleClickSetter.classList.remove('inactive')
+    pasteOnDoubleClickSwitch.checked = true
+    pasteOnDoubleClickonOffIndicator.innerHTML = 'on'
+  }
+})
+
+pasteOnDoubleClickSwitch.addEventListener('change', (e) => {
+  if (e.target.checked) {
+    browser.storage.local.set({'pasteOnDoubleClick': true})    
+    pasteOnDoubleClickSetter.classList.remove('inactive')
+    pasteOnDoubleClickonOffIndicator.innerHTML = 'on'
+  } else {
+    browser.storage.local.set({'pasteOnDoubleClick': false})    
+    pasteOnDoubleClickSetter.classList.add('inactive')
+    pasteOnDoubleClickonOffIndicator.innerHTML = 'off'
+  }
+})
+
+//Trim selection
+const trimSelectionSetter = document.getElementById('trim_selection_setter')
+const trimSelectionSwitch = document.getElementById('trim_selection_switch')
+const trimSelectionOnOffIndicator = document.getElementById('trim_selection_on_off_label')
+
+browser.storage.local.get('trimSelection', (result) => {  
+  if (result.trimSelection) {
+    trimSelectionSetter.classList.remove('inactive')
+    trimSelectionSwitch.checked = true
+    trimSelectionOnOffIndicator.innerHTML = 'on'
+  }
+})
+
+trimSelectionSwitch.addEventListener('change', (e) => {
+  if (e.target.checked) {
+    browser.storage.local.set({'trimSelection': true})    
+    trimSelectionSetter.classList.remove('inactive')
+    trimSelectionOnOffIndicator.innerHTML = 'on'
+  } else {
+    browser.storage.local.set({'trimSelection': false})    
+    trimSelectionSetter.classList.add('inactive')
+    trimSelectionOnOffIndicator.innerHTML = 'off'
+  }
+})
+
+//Always clean field before pasting selection
+const alwaysCleanFieldSetter = document.getElementById('always_clean_field_setter')
+const alwaysCleanFieldSwitch = document.getElementById('always_clean_field_switch')
+const alwaysCleanFieldOnOffIndicator = document.getElementById('always_clean_field_on_off_label')
+
+browser.storage.local.get('alwaysCleanField', (result) => {  
+  if (result.alwaysCleanField) {
+    alwaysCleanFieldSetter.classList.remove('inactive')
+    alwaysCleanFieldSwitch.checked = true
+    alwaysCleanFieldOnOffIndicator.innerHTML = 'on'
+  }
+})
+
+alwaysCleanFieldSwitch.addEventListener('change', (e) => {
+  if (e.target.checked) {
+    browser.storage.local.set({'alwaysCleanField': true})    
+    alwaysCleanFieldSetter.classList.remove('inactive')
+    alwaysCleanFieldOnOffIndicator.innerHTML = 'on'
+  } else {
+    browser.storage.local.set({'alwaysCleanField': false})    
+    alwaysCleanFieldSetter.classList.add('inactive')
+    alwaysCleanFieldOnOffIndicator.innerHTML = 'off'
+  }
+})
+
+//Bypass auto-copy on input fields
+const bypassCopyOnEditableElementsSetter = document.getElementById('bypass_copy_in_input_fields_setter')
+const bypassCopyOnEditableElementsSwitch = document.getElementById('bypass_copy_in_input_fields_switch')
+const bypassCopyOnEditableElementsOnOffIndicator = document.getElementById('bypass_copy_in_input_fields_label')
+
+browser.storage.local.get('bypassCopyOnEditableElements', (result) => {  
+  if (result.bypassCopyOnEditableElements) {
+    bypassCopyOnEditableElementsSetter.classList.remove('inactive')
+    bypassCopyOnEditableElementsSwitch.checked = true
+    bypassCopyOnEditableElementsOnOffIndicator.innerHTML = 'on'
+  }
+})
+
+bypassCopyOnEditableElementsSwitch.addEventListener('change', (e) => {
+  if (e.target.checked) {
+    browser.storage.local.set({'bypassCopyOnEditableElements': true})    
+    bypassCopyOnEditableElementsSetter.classList.remove('inactive')
+    bypassCopyOnEditableElementsOnOffIndicator.innerHTML = 'on'
+  } else {
+    browser.storage.local.set({'bypassCopyOnEditableElements': false})    
+    bypassCopyOnEditableElementsSetter.classList.add('inactive')
+    bypassCopyOnEditableElementsOnOffIndicator.innerHTML = 'off'
+  }
+})
+
+//Prepend text option switch
+const prependTextSetter = document.getElementById('prepend_text_setter')
+const prependTextSwitch = document.getElementById('prepend_text_switch')
+const prependTextOnOffIndicator = document.getElementById('prepend_text_label')
+
+browser.storage.local.get('prependText', (result) => {  
+  if (result.prependText) {
+    prependTextSetter.classList.remove('inactive')
+    prependTextSwitch.checked = true
+    prependTextOnOffIndicator.innerHTML = 'on'
+  }
+})
+
+prependTextSwitch.addEventListener('change', (e) => {
+  if (e.target.checked) {
+    browser.storage.local.set({'prependText': true})    
+    prependTextSetter.classList.remove('inactive')
+    prependTextOnOffIndicator.innerHTML = 'on'
+  } else {
+    browser.storage.local.set({'prependText': false})    
+    prependTextSetter.classList.add('inactive')
+    prependTextOnOffIndicator.innerHTML = 'off'
+  }
+})
+
+//Prepend text input field
+const prependTextInputField = document.getElementById('prepend_text_input_field')
+
+browser.storage.local.get('textToPrepend', (result) => {  
+  if (result.textToPrepend) {
+    prependTextInputField.value = result.textToPrepend
+  }
+})
+
+prependTextInputField.addEventListener('input', (e) => {
+  browser.storage.local.set({'textToPrepend': e.target.value})    
+})
+
+//Postpend text option switch
+const postpendTextSetter = document.getElementById('postpend_text_setter')
+const postpendTextSwitch = document.getElementById('postpend_text_switch')
+const postpendTextOnOffIndicator = document.getElementById('postpend_text_label')
+
+browser.storage.local.get('postpendText', (result) => {  
+  if (result.postpendText) {
+    postpendTextSetter.classList.remove('inactive')
+    postpendTextSwitch.checked = true
+    postpendTextOnOffIndicator.innerHTML = 'on'
+  }
+})
+
+postpendTextSwitch.addEventListener('change', (e) => {
+  if (e.target.checked) {
+    browser.storage.local.set({'postpendText': true})    
+    postpendTextSetter.classList.remove('inactive')
+    postpendTextOnOffIndicator.innerHTML = 'on'
+  } else {
+    browser.storage.local.set({'postpendText': false})    
+    postpendTextSetter.classList.add('inactive')
+    postpendTextOnOffIndicator.innerHTML = 'off'
+  }
+})
+
+//Postpend text input field
+const postpendTextInputField = document.getElementById('postpend_text_input_field')
+
+browser.storage.local.get('textToPostpend', (result) => {  
+  if (result.textToPostpend) {
+    postpendTextInputField.value = result.textToPostpend
+  }
+})
+
+postpendTextInputField.addEventListener('input', (e) => {
+  browser.storage.local.set({'textToPostpend': e.target.value})    
+})
+
+
+//Open user guide button
+document.getElementById('guide_button').addEventListener('click', () => { 
+  const browserLanguage = browser.i18n.getUILanguage().slice(0, 2)
+  let guideFileName = 'guide.html'
+  switch (browserLanguage) {
+    case 'it':
+      guideFileName = 'guide-it.html'
+      break;
+    case 'es':
+      guideFileName = 'guide-es.html'
+      break;
+    case 'pt':
+      guideFileName = 'guide-pt.html'
+      break;
+    case 'fr':
+      guideFileName = 'guide-fr.html'
+      break;
+    case 'de':
+      guideFileName = 'guide-de.html'
+      break;
+    case 'pl':
+      guideFileName = 'guide-pl.html'
+      break;
+    default:
+      break;
+  }
+  browser.tabs.create({ url: browser.runtime.getURL(`${guideFileName}`) }) 
+})
+
+//Close page button
+document.getElementById('close').addEventListener('click', () => { window.close() })
+
+//info buttons
+const infoButtons = document.getElementsByClassName('info-button')
+for(let i = 0; i < infoButtons.length; i++) {
+  infoButtons[i].addEventListener('pointerover', (e) => {
+    const popupId = `${e.target.id}_popup`
+    const popup = document.getElementById(popupId)
+    if (popup) popup.style.display = 'block'
+  })
+  infoButtons[i].addEventListener('pointerleave', (e) => {
+    const popupId = `${e.target.id}_popup`
+    const popup = document.getElementById(popupId)
+    if (popup) popup.style.display = 'none'
+  })
+}

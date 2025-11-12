@@ -1,0 +1,80 @@
+{
+  "extension_name": {
+    "message": "Copy on Select"
+  },
+  "extension_description": {
+    "message": "Selecciona un texto y se copiará al instante en el portapapeles. ¡Pégalo con un solo clic!"
+  },
+  "options_page_title": {
+    "message": "Opciones:"
+  },
+  "copy_on_select_option": {
+    "message": "Copia al seleccionar:"
+  },
+  "show_copied_alert_option": {
+    "message": "Mostrar alerta de '¡Copiado!':"
+  },
+  "paste_on_middle_click_option": {
+    "message": "Pegar al hacer clic central:"
+  },
+  "paste_on_double_click_ctrl_option": {
+    "message": "Pegar al hacer doble clic + Ctrl (⌘ en Mac):"
+  },
+  "trim_selection_option": {
+    "message": "Quitar espacios al principio y final de la selección:"
+  },
+  "open_guide_button": {
+    "message": "Abrir guía de usuario"
+  },
+  "close_page_button": {
+    "message": "Cerrar esta página"
+  },
+  "always_clean_field_option": {
+    "message": "Limpie siempre el campo antes de pegar:"
+  },
+  "context_menu_how_it_works": {
+    "message": "Guía de usuario"
+  },
+  "hold_shift_to_invert": {
+    "message": "(pulsa la tecla shift para invertir)"
+  },
+  "copy_only_with_alt_option": {
+    "message": "Copia automáticamente sólo cuando se pulsa la tecla Alt:"
+  },
+  "context_menu_my_other_extensions": {
+    "message": "★★ Mis otras extensiones ★★"
+  },
+  "bypass_copy_in_input_fields_option": {
+    "message": "Evitar la copia automática en los campos de entrada:"
+  },
+  "prepend_text_option": {
+    "message": "Añade este texto antes del contenido copiado:"
+  },
+  "postpend_text_option": {
+    "message": "Añade este texto después del contenido copiado:"
+  },
+  "info_button_clean_field_popup": {
+    "message": "Si pega en un campo que ya contiene texto, todo el texto del campo se eliminará antes de pegar el nuevo texto."
+  },
+  "include_url_option": {
+    "message": "Incluir la URL de la página en la selección:"
+  },
+  "url_type_complete": {
+    "message": "URL completa (https://en.wikipedia.org/wiki/Pizza)"
+  },
+  "url_type_partial": {
+    "message": "URL parcial (en.wikipedia.org/wiki/Pizza)"
+  },
+  "url_type_domain": {
+    "message": "solo nombre de dominio (en.wikipedia.org)"
+  },
+  "bypass_copy_with_ctrl_option": {
+    "message": "omitir con Ctrl (⌘ en Mac)"
+  },
+  "bypass_copy_with_alt_option": {
+    "message": "omitir con Alt"
+  },
+  "context_menu_open_options_page": {
+    "message": "Opciones"
+  }
+}

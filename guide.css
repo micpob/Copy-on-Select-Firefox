@@ -1,0 +1,21 @@
+@font-face {
+  font-family: segoe;
+  src: url(Res/fonts/Segoe_UI-semibold.ttf);
+} 
+
+body {
+  font-family: segoe;
+  background-color: green;
+  color: white;
+  font-weight: 600;
+  font-size: 1em;
+  margin: 1em;
+}
+
+a {
+  color: gold;
+}
+
+.enfasis {
+  color: gold;
+}

@@ -1,0 +1,80 @@
+{
+  "extension_name": {
+    "message": "Copy on Select"
+  },
+  "extension_description": {
+    "message": "Zaznacz tekst, a zostanie on natychmiast skopiowany do schowka! Wklej go jednym kliknięciem!"
+  },
+  "options_page_title": {
+    "message": "Opcje:"
+  },
+  "copy_on_select_option": {
+    "message": "Kopiuj po wybraniu:"
+  },
+  "show_copied_alert_option": {
+    "message": "Wyświetl alert 'Skopiowano!':"
+  },
+  "paste_on_middle_click_option": {
+    "message": "Wklej środkowym kliknięciem:"
+  },
+  "paste_on_double_click_ctrl_option": {
+    "message": "Wklej po dwukrotnym kliknięciu + Ctrl (⌘ na Mac):"
+  },
+  "trim_selection_option": {
+    "message": "Usuń spacje na początku i końcu zaznaczenia:"
+  },
+  "open_guide_button": {
+    "message": "Otwórz instrukcję obsługi"
+  },
+  "close_page_button": {
+    "message": "Zamknij tę stronę"
+  },
+  "always_clean_field_option": {
+    "message": "Zawsze czyść pole przed wklejeniem:"
+  },
+  "context_menu_how_it_works": {
+    "message": "Instrukcja obsługi"
+  },
+  "hold_shift_to_invert": {
+    "message": "(przytrzymaj shift, aby odwrócić)"
+  },
+  "copy_only_with_alt_option": {
+    "message": "Automatyczne kopiowanie tylko po naciśnięciu klawisza Alt:"
+  },
+  "context_menu_my_other_extensions": {
+    "message": "★★ Moje inne rozszerzenia ★★"
+  },
+  "bypass_copy_in_input_fields_option": {
+    "message": "Pomijanie automatycznego kopiowania w polach wejściowych:"
+  },
+  "prepend_text_option": {
+    "message": "Dodaj ten tekst przed skopiowaną zawartością:"
+  },
+  "postpend_text_option": {
+    "message": "Dodaj ten tekst za skopiowaną zawartością:"
+  },
+  "info_button_clean_field_popup": {
+    "message": "Jeśli wkleisz tekst do pola, które już zawiera tekst, cały tekst w polu zostanie usunięty przed wklejeniem nowego tekstu."
+  },
+  "include_url_option": {
+    "message": "Dodaj adres URL strony do wyboru:"
+  },
+  "url_type_complete": {
+    "message": "pełny adres URL (https://en.wikipedia.org/wiki/Pizza)"
+  },
+  "url_type_partial": {
+    "message": "częściowy adres URL (en.wikipedia.org/wiki/Pizza)"
+  },
+  "url_type_domain": {
+    "message": "tylko nazwa domeny (en.wikipedia.org)"
+  },
+  "bypass_copy_with_ctrl_option": {
+    "message": "obejść za pomocą klawisza Ctrl (⌘ na Mac)"
+  },
+  "bypass_copy_with_alt_option": {
+    "message": "obejść za pomocą klawisza Alt"
+  },
+  "context_menu_open_options_page": {
+    "message": "Opcje"
+  }
+}

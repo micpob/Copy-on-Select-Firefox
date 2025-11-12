@@ -1,0 +1,184 @@
+@font-face {
+  font-family: segoe;
+  src: url(../Res/fonts/Segoe_UI-semibold.ttf);
+} 
+
+body {  
+  font-family: segoe;
+  display: flex;
+  flex-direction: column;
+  background: green;
+  color: white;
+  font-size: 0.9em;
+}
+
+main {
+  margin: auto;
+}
+
+h1 {
+  margin-bottom: 25px;
+}
+
+h2 {
+  margin: 45px 0;
+}
+
+input {
+  width: 60px;
+  text-align: center;
+}
+
+button {  
+  border-radius: 4px;
+  border: none;
+  color: white;
+  text-align: center;
+  font-size: 23px;
+  padding: 20px;
+  width: 500px;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+#close {
+  margin: 15px 0;
+  background: darkred;
+  margin-top: 5%;
+}
+
+#close:hover {
+  background: red;
+}
+
+#guide_button {
+  margin: 0, 0, 15px, 0;
+  background: darkblue;
+  /* margin-top: 5%; */
+}
+
+#guide_button:hover {
+  background: blue;
+}
+
+.inactive {
+  opacity: 0.7;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 34px;
+  height: 17px;
+  top: 6px;
+  margin-left: 4px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  border-radius: 17px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  border-radius: 50%;
+  height: 13px;
+  width: 13px;
+  left: 4px;
+  bottom: 2px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: rgb(0, 98, 255);
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px rgb(0, 98, 255);
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(13px);
+  -ms-transform: translateX(13px);
+  transform: translateX(13px);
+}
+
+#hold_shift_to_invert {
+  margin: 0;
+}
+
+input[type=text] {
+  width: 150px;
+  border: none;
+  border:solid 1px #ccc;
+  border-radius: 4px;
+}
+
+.option-container {
+  display: flex;
+}
+
+.option-container h2 {
+  display: inline;
+  margin: 0;
+}
+
+.info-button {
+  align-self: center;
+  position: relative;
+  display: inline-block;
+  background-image: url(../Res/question_mark.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-left: 20px;
+  margin-bottom: auto;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background-color: rgb(0, 98, 255);
+  outline: none;
+  border: 1px solid rgb(190, 190, 190);
+  vertical-align: bottom;
+}
+
+.info-button-popup {
+  background-color: white;
+  position: absolute;
+  display: none;
+  border-radius: 8px;
+  padding: 12px;
+  background-color: white;
+  color: black;
+  font-size: medium;
+  /* min-height: 200px;*/
+  min-width: 200px; 
+  z-index: 10;
+  border: 8px solid black;
+  line-height: 1;
+}
+
+input[type="radio"], input[type="checkbox"] {
+  cursor: pointer;
+}
+
+.visible-checkbox, .visible-radio {
+  height: 15px;
+  margin-top: 10px;
+}

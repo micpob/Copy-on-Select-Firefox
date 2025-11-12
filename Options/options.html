@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Copy on Select options</title>
+  <link rel="shortcut icon" type="image/png" href="../Res/Icons/icon32.png"/>
+  <link rel="stylesheet" type="text/css" href="options.css">
+</head>
+<body>
+  <main>
+    <h1 data-text="options_page_title"></h1>
+    <h2 id="copy_on_select_setter" class="inactive">
+      <span data-text="copy_on_select_option"></span>
+      <label class="switch"> <input type="checkbox" id="copy_on_select_switch"> <span class="slider"></span> </label>
+      <span id="copy_on_select_on_off_label">off</span>
+      <br>
+      <input type="checkbox" id="bypass_with_ctrl" name="bypass_with_ctrl" value="" class="visible-checkbox">
+      <label for="bypass_with_ctrl" data-text="bypass_copy_with_ctrl_option"></label><br>
+      <input type="checkbox" id="bypass_with_alt" name="bypass_with_alt" value="" class="visible-checkbox">
+      <label for="bypass_with_alt" data-text="bypass_copy_with_alt_option"></label><br>
+    </h2>
+    <h2 id="copy_only_with_alt_setter" class="inactive">
+      <span data-text="copy_only_with_alt_option"></span>
+      <label class="switch"> <input type="checkbox" id="copy_only_with_alt_switch"> <span class="slider"></span> </label>
+      <span id="copy_only_with_alt_label">off</span>
+    </h2>
+    <h2 id="include_url_setter" class="inactive">
+      <span data-text="include_url_option"></span>
+      <label class="switch"> <input type="checkbox" id="include_url_switch"> <span class="slider"></span> </label>
+      <span id="include_url_on_off_label">off</span>
+      <br>
+      <input type="radio" id="url_type_complete" name="url_type" value="complete" class="visible-radio">
+      <label for="complete" data-text="url_type_complete"></label><br>
+      <input type="radio" id="url_type_partial" name="url_type" value="partial" class="visible-radio">
+      <label for="partial" data-text="url_type_partial"></label><br>
+      <input type="radio" id="url_type_domain" name="url_type" value="domain" class="visible-radio">
+      <label for="domain" data-text="url_type_domain"></label>
+    </h2>
+    <h2 id="show_copied_alert_setter" class="inactive">
+      <span data-text="show_copied_alert_option"></span>
+      <label class="switch"> <input type="checkbox" id="show_copied_alert_switch"> <span class="slider"></span> </label>
+      <span id="show_copied_alert_on_off_label">off</span>
+    </h2>
+    <h2 id="paste_on_middle_click_setter" class="inactive">
+      <span data-text="paste_on_middle_click_option"></span>
+      <label class="switch"> <input type="checkbox" id="paste_on_middle_click_switch"> <span class="slider"></span> </label>
+      <span id="paste_on_middle_click_on_off_label">off</span>
+    </h2>
+    <h2 id="paste_on_double_click_ctrl_setter" class="inactive">
+      <span data-text="paste_on_double_click_ctrl_option"></span>
+      <label class="switch"> <input type="checkbox" id="paste_on_double_click_ctrl_switch"> <span class="slider"></span> </label>
+      <span id="paste_on_double_click_ctrl_on_off_label">off</span>
+    </h2>
+    <h2 id="trim_selection_setter" class="inactive">
+      <span data-text="trim_selection_option"></span>
+      <label class="switch"> <input type="checkbox" id="trim_selection_switch"> <span class="slider"></span> </label>
+      <span id="trim_selection_on_off_label">off</span>
+    </h2>
+    <div class="option-container">
+      <h2 id="always_clean_field_setter" class="inactive">
+        <span data-text="always_clean_field_option"></span>
+        <label class="switch"> <input type="checkbox" id="always_clean_field_switch"> <span class="slider"></span> </label>
+        <span id="always_clean_field_on_off_label">off</span>
+        <p data-text="hold_shift_to_invert" id="hold_shift_to_invert"></p>
+      </h2>
+      <div id="info_button_clean_field" class="info-button"><div id="info_button_clean_field_popup" class="info-button-popup" data-text="info_button_clean_field_popup"></div></div>
+    </div>  
+    <h2 id="bypass_copy_in_input_fields_setter" class="inactive">
+      <span data-text="bypass_copy_in_input_fields_option"></span>
+      <label class="switch"> <input type="checkbox" id="bypass_copy_in_input_fields_switch"> <span class="slider"></span> </label>
+      <span id="bypass_copy_in_input_fields_label">off</span>
+    </h2>
+    <h2 id="prepend_text_setter" class="inactive">
+      <span data-text="prepend_text_option"></span>
+      <input type="text" id="prepend_text_input_field" name="prepend_text_input_field" size="150">
+      <label class="switch"> <input type="checkbox" id="prepend_text_switch"> <span class="slider"></span> </label>
+      <span id="prepend_text_label">off</span>
+    </h2>
+    <h2 id="postpend_text_setter" class="inactive">
+      <span data-text="postpend_text_option"></span>
+      <input type="text" id="postpend_text_input_field" name="postpend_text_input_field" size="150">
+      <label class="switch"> <input type="checkbox" id="postpend_text_switch"> <span class="slider"></span> </label>
+      <span id="postpend_text_label">off</span>
+    </h2>
+    <button data-text="open_guide_button" id="guide_button"></button> 
+    <br>
+    <button data-text="close_page_button" id="close"></button> 
+  </main>  
+</body>
+<script src="options.js"></script>
+</html>

@@ -1,0 +1,80 @@
+{
+  "extension_name": {
+    "message": "Copy on Select"
+  },
+  "extension_description": {
+    "message": "Select some text and it will be instantly copied to the clipboard! Paste it with one click!"
+  },
+  "options_page_title": {
+    "message": "Copy on Select options:"
+  },
+  "copy_on_select_option": {
+    "message": "Copy on select:"
+  },
+  "show_copied_alert_option": {
+    "message": "Show 'Copied!' alert:"
+  },
+  "paste_on_middle_click_option": {
+    "message": "Paste on middle click:"
+  },
+  "paste_on_double_click_ctrl_option": {
+    "message": "Paste on double click + Ctrl (⌘ on Mac):"
+  },
+  "trim_selection_option": {
+    "message": "Remove white spaces at the beginning and end of the selection:"
+  },
+  "open_guide_button": {
+    "message": "Open user guide"
+  },
+  "close_page_button": {
+    "message": "Close this page"
+  },
+  "always_clean_field_option": {
+    "message": "Always clean field before pasting:"
+  },
+  "context_menu_how_it_works": {
+    "message": "How it works"
+  },
+  "hold_shift_to_invert": {
+    "message": "(hold shift to invert)"
+  },
+  "copy_only_with_alt_option": {
+    "message": "Auto copy only when Alt key is pressed:"
+  },
+  "context_menu_my_other_extensions": {
+    "message": "★★ My other extensions ★★"
+  },
+  "bypass_copy_in_input_fields_option": {
+    "message": "Bypass auto copy in input fields:"
+  },
+  "prepend_text_option": {
+    "message": "Add this text before the copied content:"
+  },
+  "postpend_text_option": {
+    "message": "Add this text after the copied content:"
+  },
+  "info_button_clean_field_popup": {
+    "message": "If you paste in a field that already contains some text, all text in the field will be deleted before pasting the new text."
+  },
+  "include_url_option": {
+    "message": "Include URL of page in selection:"
+  },
+  "url_type_complete": {
+    "message": "complete URL (https://en.wikipedia.org/wiki/Pizza)"
+  },
+  "url_type_partial": {
+    "message": "partial URL (en.wikipedia.org/wiki/Pizza)"
+  },
+  "url_type_domain": {
+    "message": "just domain name (en.wikipedia.org)"
+  },
+  "bypass_copy_with_ctrl_option": {
+    "message": "bypass with Ctrl (⌘ on Mac)"
+  },
+  "bypass_copy_with_alt_option": {
+    "message": "bypass with Alt"
+  },
+  "context_menu_open_options_page": {
+    "message": "Options"
+  }
+}
