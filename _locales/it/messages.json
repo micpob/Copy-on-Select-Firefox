@@ -76,5 +76,8 @@
   },
   "context_menu_open_options_page": {
     "message": "Opzioni"
+  },
+  "remove_emojis_option": {
+    "message": "Rimuovi emoji dalla selezione:"
   }
 }
