@@ -32,12 +32,8 @@ If you keep the Shift key pressed while pasting, the field into which you are pa
   
 &nbsp;  
 
-## Stack used:
-
-HTML, CSS, Javascript (Extensions APIs)
+**Made with:** HTML, CSS, Javascript (Extensions APIs)
 
 &nbsp;
   
-### Install here: 
-
 <a href="https://addons.mozilla.org/en-US/firefox/addon/auto-copy-on-select/"><kbd><img src="Docs/Screenshots/Firefox_Browser_Add-ons_logo.png" alt="Firefox web store button" width="250px" ></kbd></a>
